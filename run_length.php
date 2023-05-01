@@ -7,8 +7,9 @@ class Run_Length
 {
 	/**
 	 * 圧縮
+	 * 計算量：O(|s|)
 	 * @param string $s 圧縮したい文字列
-	 * @return array 要素が[文字列, 連続した現れる回数]となる配列
+	 * @return array 要素が[文字列, 連続して現れる回数]となる配列
 	 */
 	public static function encode(string $s): array
 	{
@@ -25,7 +26,8 @@ class Run_Length
 
 	/**
 	 * 復元
-	 * @param array $a 要素が[文字列, 連続した現れる回数]となる配列
+	 * 計算量：O(|s|) (|s|は復元後の文字列の長さ)
+	 * @param array $a 要素が[文字列, 連続して現れる回数]となる配列
 	 * @return string 復元された文字列
 	 */
 	public static function decode(array $a): string
