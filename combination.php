@@ -6,7 +6,7 @@
  */
 class Combination
 {
-	/** @var int 前処理を行う最大のi */
+	/** @var int 前処理を行う最大のi (nHkを使用する場合はn-1+k) */
 	private $n;
 	/** @var Modint mod計算を行うクラス */
 	private $modint;
@@ -16,7 +16,8 @@ class Combination
 	private $ifact;
 
 	/**
-	 * プロパティの初期化｜計算量：O(nlog mod)
+	 * プロパティの初期化
+	 * 計算量：O(nlog mod)
 	 * @param int $n 前処理を行う最大のi
 	 * @param int $mod mod
 	 */
@@ -29,7 +30,8 @@ class Combination
 	}
 
 	/**
-	 * 各i(0≦i≦n)の階乗を計算｜計算量：O(n)
+	 * 各i(0≦i≦n)の階乗を計算
+	 * 計算量：O(n)
 	 * @return int[] 計算結果
 	 */
 	private function init_fact(): array
@@ -43,7 +45,8 @@ class Combination
 	}
 
 	/**
-	 * 各i(0≦i≦n)の階乗の逆元を計算｜計算量：O(n+log mod)
+	 * 各i(0≦i≦n)の階乗の逆元を計算
+	 * 計算量：O(n+log mod)
 	 * @return int[] 計算結果
 	 */
 	private function init_ifact(): array
@@ -57,7 +60,8 @@ class Combination
 	}
 
 	/**
-	 * 階乗｜計算量：O(1)
+	 * 階乗
+	 * 計算量：O(1)
 	 * @return int 計算結果
 	 */
 	public function fact(int $val): int
@@ -67,7 +71,8 @@ class Combination
 	}
 
 	/**
-	 * 階乗の逆元｜計算量：O(1)
+	 * 階乗の逆元
+	 * 計算量：O(1)
 	 * @return int 計算結果
 	 */
 	public function ifact(int $val): int
@@ -77,7 +82,8 @@ class Combination
 	}
 
 	/**
-	 * n個からk個を選ぶ組み合わせの数｜計算量：O(1)
+	 * n個からk個を選ぶ組み合わせの数
+	 * 計算量：O(1)
 	 * @param int $n nCkのn
 	 * @param int $k nCkのk
 	 * @return int 計算結果
@@ -89,7 +95,8 @@ class Combination
 	}
 
 	/**
-	 * n個から重複を許してk個を選ぶ組み合わせの数｜計算量：O(1)
+	 * n個から重複を許してk個を選ぶ組み合わせの数
+	 * 計算量：O(1)
 	 * @param int $n nHkのn
 	 * @param int $k nHkのk
 	 * @return int 計算結果

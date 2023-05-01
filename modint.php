@@ -15,7 +15,8 @@ class Modint
 	private $mod;
 
 	/**
-	 * プロパティの初期化｜計算量：O(1)
+	 * プロパティの初期化
+	 * 計算量：O(1)
 	 * @param int $mod mod
 	 */
 	public function __construct(int $mod)
@@ -25,7 +26,8 @@ class Modint
 	}
 
 	/**
-	 * modを取得｜計算量：O(1)
+	 * modを取得
+	 * 計算量：O(1)
 	 * @return int mod
 	 */
 	public function get_mod(): int
@@ -34,7 +36,8 @@ class Modint
 	}
 
 	/**
-	 * 加算｜計算量：O(|vals|)
+	 * 加算
+	 * 計算量：O(|vals|)
 	 * @param int $vals 加算する値
 	 * @return int 計算結果
 	 */
@@ -49,7 +52,8 @@ class Modint
 	}
 
 	/**
-	 * 減算｜計算量：O(|vals|)
+	 * 減算
+	 * 計算量：O(|vals|)
 	 * @param int $target 減算される値
 	 * @param int $vals 減算する値
 	 * @return int 計算結果
@@ -65,7 +69,8 @@ class Modint
 	}
 
 	/**
-	 * 乗算｜計算量：O(|vals|)
+	 * 乗算
+	 * 計算量：O(|vals|)
 	 * @param int $vals 乗算する値
 	 * @return int 計算結果
 	 */
@@ -80,7 +85,8 @@ class Modint
 	}
 
 	/**
-	 * 除算｜計算量：O(|vals|log mod)
+	 * 除算
+	 * 計算量：O(|vals|log mod)
 	 * @param int $target 除算される値
 	 * @param int $vals 除算する値
 	 * @return int 計算結果
@@ -96,7 +102,8 @@ class Modint
 	}
 
 	/**
-	 * 累乗を繰り返し二乗法で計算｜計算量：O(log exp)
+	 * 累乗を繰り返し二乗法で計算
+	 * 計算量：O(log exp)
 	 * @param int $val 底
 	 * @param int $exp 指数
 	 * @return int 計算結果
@@ -116,7 +123,8 @@ class Modint
 	}
 
 	/**
-	 * 逆元を拡張ユークリッドの互除法で計算｜計算量：O(log mod)
+	 * 逆元を拡張ユークリッドの互除法で計算
+	 * 計算量：O(log mod)
 	 * @param int $val 逆元を求めたい値
 	 * @return int 計算結果
 	 */
@@ -136,7 +144,8 @@ class Modint
 	}
 
 	/**
-	 * 加算(参照渡しver)｜計算量：O(|vals|)
+	 * 加算(参照渡しver)
+	 * 計算量：O(|vals|)
 	 * @param int &$target 加算される値
 	 * @param int $vals 加算する値
 	 * @return int 計算結果
@@ -147,7 +156,8 @@ class Modint
 	}
 
 	/**
-	 * 減算(参照渡しver)｜計算量：O(|vals|)
+	 * 減算(参照渡しver)
+	 * 計算量：O(|vals|)
 	 * @param int &$target 減算される値
 	 * @param int $vals 減算する値
 	 * @return int 計算結果
@@ -158,7 +168,8 @@ class Modint
 	}
 
 	/**
-	 * 乗算(参照渡しver)｜計算量：O(|vals|)
+	 * 乗算(参照渡しver)
+	 * 計算量：O(|vals|)
 	 * @param int &$target 乗算される値
 	 * @param int $vals 乗算する値
 	 * @return int 計算結果
@@ -169,7 +180,8 @@ class Modint
 	}
 
 	/**
-	 * 除算(参照渡しver)｜計算量：O(|vals|log mod)
+	 * 除算(参照渡しver)
+	 * 計算量：O(|vals|log mod)
 	 * @param int &$target 割られる値
 	 * @param int $vals 割る値
 	 * @return int 計算結果
@@ -180,7 +192,8 @@ class Modint
 	}
 
 	/**
-	 * 累乗を繰り返し二乗法で計算(参照渡しver)｜計算量：O(log exp)
+	 * 累乗を繰り返し二乗法で計算(参照渡しver)
+	 * 計算量：O(log exp)
 	 * @param int &$val 底
 	 * @param int $exp 指数
 	 * @return int 計算結果
@@ -191,7 +204,8 @@ class Modint
 	}
 
 	/**
-	 * 逆元を拡張ユークリッドの互除法で計算(参照渡しver)｜計算量：O(log mod)
+	 * 逆元を拡張ユークリッドの互除法で計算(参照渡しver)
+	 * 計算量：O(log mod)
 	 * @param int &$val 逆元を求めたい値
 	 * @return int 計算結果
 	 */
