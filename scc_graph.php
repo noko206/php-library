@@ -97,8 +97,8 @@ class Scc_Graph
 		for ($i = 0; $i < $this->n; ++$i) {
 			if ($ord[$i] === -1) $dfs($i);
 		}
-		foreach ($ids as &$x) {
-			$x = $group_num - 1 - $x;
+		foreach ($ids as $k => $v) {
+			$ids[$k] = $group_num - 1 - $v;
 		}
 		return [$group_num, $ids];
 	}
