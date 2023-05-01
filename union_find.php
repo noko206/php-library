@@ -42,7 +42,7 @@ class Union_Find
 		assert(0 <= $x && $x < $this->n);
 
 		// 自分が親のとき、自分を返す
-		if($this->par[$x] === $x) return $x;
+		if ($this->par[$x] === $x) return $x;
 		// 親ノードを更新しつつ、再帰的に代表元を探す
 		return $this->par[$x] = $this->leader($this->par[$x]);
 	}
@@ -64,10 +64,10 @@ class Union_Find
 		$ry = $this->leader($y);
 
 		// 既に結合している場合は何もしない
-		if($rx === $ry) return false;
+		if ($rx === $ry) return false;
 
 		// サイズが大きい方をrxとする
-		if($this->siz[$rx] < $this->siz[$ry]) {
+		if ($this->siz[$rx] < $this->siz[$ry]) {
 			list($rx, $ry) = [$ry, $rx];
 		}
 

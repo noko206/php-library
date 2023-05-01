@@ -89,14 +89,12 @@ class Binary_Trie
 			if ($this->nodes[2 * $pt] !== -1 && $this->cnt[$this->nodes[2 * $pt]] > 0) {
 				if ($this->cnt[$this->nodes[2 * $pt]] >= $k) {
 					$pt = $this->nodes[2 * $pt];
-				}
-				else {
+				} else {
 					$k -= $this->cnt[$this->nodes[2 * $pt]];
 					$pt = $this->nodes[2 * $pt + 1];
 					++$ans;
 				}
-			}
-			else {
+			} else {
 				$pt = $this->nodes[2 * $pt + 1];
 				++$ans;
 			}
@@ -136,7 +134,7 @@ class Binary_Trie
 	{
 		$pt = 0;
 		$ans = 1;
-		for($i = $this->bitlen - 1; $i >= 0; --$i) {
+		for ($i = $this->bitlen - 1; $i >= 0; --$i) {
 			if ($pt === -1) break;
 			if ($x >> $i & 1 && $this->nodes[2 * $pt] !== -1) {
 				$ans += $this->cnt[$this->nodes[2 * $pt]];

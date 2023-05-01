@@ -185,7 +185,7 @@ class Segment_Tree
 			}
 			$sm = ($this->op)($sm, $this->data[$l]);
 			$l += 1;
-		} while(($l & -$l) !== $l);
+		} while (($l & -$l) !== $l);
 		return $this->n;
 	}
 
@@ -221,7 +221,7 @@ class Segment_Tree
 				return $r + 1 - $this->size;
 			}
 			$sm = ($this->op)($this->data[$r], $sm);
-		} while(($r & -$r) !== $r);
+		} while (($r & -$r) !== $r);
 		return 0;
 	}
 }
