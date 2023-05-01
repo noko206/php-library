@@ -43,7 +43,6 @@ class Binary_Indexed_Tree
 	 * @return int 最初からidx番目までの和
 	 */
 	private function sub_sum(int $idx): int {
-		++$idx; // 1-indexedにする
 		$sum = 0;
 		for ($i = $idx; $i > 0; $i -= ($i & -$i)) {
 			$sum += $this->bit[$i];
