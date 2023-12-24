@@ -6,7 +6,7 @@
  * @param int $n n以下の素数を取得
  * @return int[] 素数のリスト
  */
-function primes(int $n): array
+function enumPrimes(int $n): array
 {
 	$sieve = array_fill(0, $n + 1, true);
 	$sieve[0] = false;
