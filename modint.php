@@ -30,7 +30,7 @@ class Modint
 	 * 計算量：O(1)
 	 * @return int mod
 	 */
-	public function get_mod(): int
+	public function getMod(): int
 	{
 		return $this->mod;
 	}

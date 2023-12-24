@@ -3,7 +3,7 @@
 /**
  * 有向グラフを強連結成分分解する
  */
-class Scc_Graph
+class StronglyConnectedComponents
 {
 	/** @var int 頂点数 */
 	private $n;
@@ -27,7 +27,7 @@ class Scc_Graph
 	 * @param int $from 0≦from＜n
 	 * @param int $to 0≦to＜n
 	 */
-	public function add_edge(int $from, int $to): void
+	public function addEdge(int $from, int $to): void
 	{
 		assert(0 <= $from && $from < $this->n);
 		assert(0 <= $to && $to < $this->n);
@@ -61,7 +61,7 @@ class Scc_Graph
 	 * 計算量：O(n+m) mは辺数
 	 * @return array [グラフの強連結成分数, 各頂点が属する強連結成分のID]
 	 */
-	private function scc_ids(): array
+	private function sccIds(): array
 	{
 		list($start, $elist) = $this->csr();
 		$now_ord = 0;
@@ -113,7 +113,7 @@ class Scc_Graph
 	 */
 	public function scc(): array
 	{
-		list($group_num, $ids) = $this->scc_ids();
+		list($group_num, $ids) = $this->sccIds();
 		$counts = array_fill(0, $group_num, 0);
 		foreach ($ids as $x) {
 			++$counts[$x];

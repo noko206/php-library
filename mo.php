@@ -44,7 +44,7 @@ class Mo
 	 * @param callable $out クエリ[l,r)の計算結果を出力する処理
 	 * @return void
 	 */
-	private function sub_build(callable $add_left, callable $add_right, callable $erase_left, callable $erase_right, callable $out): void
+	private function subBuild(callable $add_left, callable $add_right, callable $erase_left, callable $erase_right, callable $out): void
 	{
 		$q = count($this->lr);
 		$bs = intdiv($this->n, min($this->n, (int)sqrt($q)));
@@ -79,6 +79,6 @@ class Mo
 	 */
 	public function build(callable $add, callable $erase, callable $out): void
 	{
-		$this->sub_build($add, $add, $erase, $erase, $out);
+		$this->subBuild($add, $add, $erase, $erase, $out);
 	}
 }

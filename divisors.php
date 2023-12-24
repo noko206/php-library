@@ -6,7 +6,7 @@
  * @param int $n 約数を取得したい値
  * @return int[] 約数のリスト (昇順)
  */
-function divisors(int $n): array
+function enumDivisors(int $n): array
 {
 	$a = [];
 	for ($i = 1; $i * $i <= $n; ++$i) {

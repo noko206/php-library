@@ -26,12 +26,12 @@ class Combination
 	 * @param int $n 前処理を行う最大のi
 	 * @param int $mod mod
 	 */
-	public function __construct(int $n, int $mod)
+	public function __construct(int $n, Modint $modint)
 	{
 		$this->n = $n;
-		$this->modint = new Modint($mod);
-		$this->fact = $this->init_fact($n);
-		$this->ifact = $this->init_ifact($n);
+		$this->modint = $modint;
+		$this->fact = $this->initFact($n);
+		$this->ifact = $this->initIFact($n);
 	}
 
 	/**
@@ -39,7 +39,7 @@ class Combination
 	 * 計算量：O(n)
 	 * @return int[] 計算結果
 	 */
-	private function init_fact(): array
+	private function initFact(): array
 	{
 		$fact = [];
 		$fact[0] = 1; // 0!は1とする
@@ -54,7 +54,7 @@ class Combination
 	 * 計算量：O(n+log mod)
 	 * @return int[] 計算結果
 	 */
-	private function init_ifact(): array
+	private function initIFact(): array
 	{
 		$ifact = [];
 		$ifact[$this->n] = $this->modint->inv($this->fact[$this->n]); // (n!)^(-1)
