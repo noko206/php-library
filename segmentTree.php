@@ -11,7 +11,7 @@
  * 計算量は二項演算opと単位元の取得eが定数時間で動作すると仮定したときのもの
  * 各計算量がO(f(n))である場合、全ての計算量はO(f(n))倍になる
  */
-class Segment_Tree
+class SegmentTree
 {
 	private const MIN_N = 1;
 	private const MAX_N = 100000000;
@@ -43,7 +43,7 @@ class Segment_Tree
 		$this->n = $n;
 		$this->op = $op;
 		$this->e = $e;
-		$this->log = $this->bit_length($n - 1);
+		$this->log = $this->bitLength($n - 1);
 		$this->size = 1 << $this->log;
 		$this->data = array_fill(0, 2 * $this->size, $e());
 		if (!empty($a)) {
@@ -64,7 +64,7 @@ class Segment_Tree
 	 * @param int $n ビット長を求めたい値
 	 * @return int ビット長
 	 */
-	private function bit_length(int $n): int
+	private function bitLength(int $n): int
 	{
 		$len = 0;
 		while ($n > 0) {
@@ -148,7 +148,7 @@ class Segment_Tree
 	 * 計算量：O(1)
 	 * @return mixed 全要素の総積
 	 */
-	public function all_prod()
+	public function allProd()
 	{
 		return $this->data[1];
 	}
@@ -162,7 +162,7 @@ class Segment_Tree
 	 * @param callable $f function($x): bool { }
 	 * @return int 条件を満たすr
 	 */
-	public function max_right(int $l, callable $f): int
+	public function maxRight(int $l, callable $f): int
 	{
 		assert(0 <= $l && $l <= $this->n);
 		assert($f(($this->e)()));
@@ -198,7 +198,7 @@ class Segment_Tree
 	 * @param callable $f function($x): bool { }
 	 * @return int 条件を満たすl
 	 */
-	public function min_left(int $r, callable $f): int
+	public function minLeft(int $r, callable $f): int
 	{
 		assert(0 <= $r && $r <= $this->n);
 		assert($f(($this->e)()));
