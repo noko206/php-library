@@ -10,6 +10,7 @@ class BinaryIndexedTree
 {
 	/** @var int $n 要素数 */
 	private $n;
+
 	/** @var int[] $bit データの格納先 */
 	private $bit;
 
