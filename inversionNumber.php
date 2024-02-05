@@ -10,6 +10,7 @@
 function inversionNumber(array $a): int
 {
 	$b = array_unique($a);
+	sort($b);
 	$bit = new BinaryIndexedTree(count($b));
 	$ans = 0;
 	$n = count($a);

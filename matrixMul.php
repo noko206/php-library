@@ -15,6 +15,7 @@ function matrixMul(array $a, array $b, int $mod): array
 		for ($j = 0; $j < count($b[0]); ++$j) {
 			for ($k = 0; $k < count($b); ++$k) {
 				$res[$i][$j] += ($a[$i][$k] * $b[$k][$j]) % $mod;
+				$res[$i][$j] %= $mod;
 			}
 		}
 	}

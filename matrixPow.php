@@ -2,13 +2,14 @@
 
 /**
  * 行列累乗
+ * 依存ライブラリ：matrixMul
  *
  * @param list<list<int>> $a
  * @param int $n
  * @param int $mod
  * @return list<list<int>>
  */
-function matirxPow(array $a, int $n, int $mod): array
+function matrixPow(array $a, int $n, int $mod): array
 {
 	$res = array_fill(0, count($a), array_fill(0, count($a), 0));
 	for ($i = 0; $i < count($a); ++$i) {
