@@ -1,6 +1,6 @@
 ﻿# php-library
 
-[wiki/Verified-with](https://github.com/noko206/php-library/wiki/Verified-with)に検証用コードをまとめています。<br>
-検証が十分でないものがあるので適宜追加していく予定です。
+AtCoderなどで使用するPHPの競プロ用ライブラリです。
 
-バグがあればご指摘いただけると助かります。
+[wiki/Verified-with](https://github.com/noko206/php-library/wiki/Verified-with)に検証用コードをまとめています。<br>
+バグがあればご指摘ください。
