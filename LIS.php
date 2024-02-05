@@ -4,6 +4,8 @@ const INF64 = 1001001001001001001;
 
 /**
  * 最長増加部分列の長さを取得
+ * 依存ライブラリ：lowerBound
+ *
  * @param list<int> $a
  * @param bool $isStrong true:狭義単調増加/false:広義単調増加
  * @return int

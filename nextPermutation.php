@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * 次の順列を生成
+ *
+ * @param list<int> &$a 次の順列に上書きされる
+ * @return bool true:次の順列が存在する/false:次の順列が存在しない
+ */
 function nextPermutation(array &$a): bool {
 	$n = count($a);
 	$i = $n - 1;
