@@ -6,7 +6,7 @@
  * ・2頂点が連結かの判定
  * ・連結成分の頂点数の取得
  */
-class Union_Find
+class UnionFind
 {
 	private const MIN_N = 1;
 	private const MAX_N = 100000000;

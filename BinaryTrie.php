@@ -9,7 +9,7 @@
  * ・二分探索 (集合内で値x以上(より大きい)最小の要素が昇順で何番目か取得)
  * ・k番目に小さい要素を取得
  */
-class Binary_Trie
+class BinaryTrie
 {
 	/** @var int[] ポインタ */
 	private $nodes;
@@ -79,7 +79,7 @@ class Binary_Trie
 	 * @param int $k 昇順で何番目か
 	 * @return int 昇順でk番目の値
 	 */
-	public function kth_elm(int $k): int
+	public function kthElement(int $k): int
 	{
 		assert(1 <= $k && $k <= $this->size());
 		$pt = 0;
@@ -108,9 +108,9 @@ class Binary_Trie
 	 * @param int $x 何以上の値か
 	 * @return int 昇順で何番目か
 	 */
-	public function lower_bound(int $x): int
+	public function lowerBound(int $x): int
 	{
-		return $this->count_lower($x);
+		return $this->countLower($x);
 	}
 
 	/**
@@ -119,9 +119,9 @@ class Binary_Trie
 	 * @param int $x 何より大きい値か
 	 * @return int 昇順で何番目か
 	 */
-	public function upper_bound(int $x): int
+	public function upperBound(int $x): int
 	{
-		return $this->count_lower($x + 1);
+		return $this->countLower($x + 1);
 	}
 
 	/**
@@ -130,7 +130,7 @@ class Binary_Trie
 	 * @param int $x 何以上の値か
 	 * @return int 昇順で何番目か
 	 */
-	private function count_lower(int $x): int
+	private function countLower(int $x): int
 	{
 		$pt = 0;
 		$ans = 1;
@@ -178,7 +178,7 @@ class Binary_Trie
 	 */
 	public function max(): int
 	{
-		return $this->kth_elm($this->size());
+		return $this->kthElement($this->size());
 	}
 
 	/**
@@ -188,6 +188,6 @@ class Binary_Trie
 	 */
 	public function min(): int
 	{
-		return $this->kth_elm(1);
+		return $this->kthElement(1);
 	}
 }

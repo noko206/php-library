@@ -6,7 +6,7 @@
  * @param int 素因数分解したい値
  * @return array [素因数,指数]となる配列
  */
-function prime_factorize(int $n): array
+function primeFactorize(int $n): array
 {
 	$a = [];
 	for ($i = 2; $i * $i <= $n; ++$i) {

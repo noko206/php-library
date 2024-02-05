@@ -6,10 +6,11 @@
  * ・区間の要素の総和の取得
  * ・二分探索 (a[0]+...+a[i]がx以上(より大きい))最小の添え字の取得
  */
-class Binary_Indexed_Tree
+class BinaryIndexedTree
 {
 	/** @var int $n 要素数 */
 	private $n;
+
 	/** @var int[] $bit データの格納先 */
 	private $bit;
 
@@ -18,7 +19,8 @@ class Binary_Indexed_Tree
 	 * 計算量：O(n)
 	 * @param int $n 要素数
 	 */
-	public function __construct(int $n) {
+	public function __construct(int $n)
+	{
 		$this->n = $n; // aの要素数
 		$this->bit = array_fill(0, $n + 1, 0); // 内部的には1-indexedなのでn+1
 	}
@@ -29,7 +31,8 @@ class Binary_Indexed_Tree
 	 * @param int $idx キー (0-indexed)
 	 * @param int $x 加算する値
 	 */
-	public function add(int $idx, int $x): void {
+	public function add(int $idx, int $x): void
+	{
 		++$idx; // 1-indexedにする
 		for ($i = $idx; $i <= $this->n; $i += ($i & -$i)) {
 			$this->bit[$i] += $x;
@@ -42,7 +45,8 @@ class Binary_Indexed_Tree
 	 * @param int $idx キー (0-indexed)
 	 * @return int 最初からidx番目までの和
 	 */
-	private function sub_sum(int $idx): int {
+	private function subSum(int $idx): int
+	{
 		$sum = 0;
 		for ($i = $idx; $i > 0; $i -= ($i & -$i)) {
 			$sum += $this->bit[$i];
@@ -60,7 +64,7 @@ class Binary_Indexed_Tree
 	public function sum(int $l, int $r): int
 	{
 		assert(0 <= $l && $l <= $r && $r <= $this->n);
-		return $this->sub_sum($r) - $this->sub_sum($l);
+		return $this->subSum($r) - $this->subSum($l);
 	}
 
 	/**
@@ -69,8 +73,9 @@ class Binary_Indexed_Tree
 	 * @param int $x 探索したい値
 	 * @return int a[0]+...+a[i] >= xとなるような最小のi
 	 */
-	public function lower_bound(int $x): int {
-		return $this->count_lower($x);
+	public function lowerBound(int $x): int
+	{
+		return $this->countLower($x);
 	}
 
 	/**
@@ -79,8 +84,9 @@ class Binary_Indexed_Tree
 	 * @param int $x
 	 * @return int a[0]+...+a[i] > xとなるような最小のi
 	 */
-	public function upper_bound(int $x): int {
-		return $this->count_lower($x + 1);
+	public function upperBound(int $x): int
+	{
+		return $this->countLower($x + 1);
 	}
 
 	/**
@@ -89,7 +95,8 @@ class Binary_Indexed_Tree
 	 * @param int $x 探索したい値
 	 * @return int a[0]+...+a[i] >= xとなるような最小のi
 	 */
-	private function count_lower(int $x): int {
+	private function countLower(int $x): int
+	{
 		if ($x <= 0) return -1;
 		$k = 0;
 		$idx = 1;
